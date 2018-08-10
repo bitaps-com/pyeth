@@ -1,19 +1,10 @@
 from pyeth.key import *
 import sha3
 from py_ecc.secp256k1 import privtopub
-import sha3
-from py_ecc.secp256k1 import privtopub
-
-from pyeth.key import *
 
 
-def address_to_bytes(hex_type):
-    byte_type=decode_hex(hex_type[2:])
-    return byte_type
 
-def bytes_to_address(byte_type):
-    hex_type="0x%s" % encode_hex(byte_type)
-    return hex_type
+
 
 def private_key_to_address(privkey):
     k = normalize_key(privkey)
