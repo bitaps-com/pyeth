@@ -24,6 +24,7 @@ def safe_ord(value):
     else:
         return ord(value)
 
+
 def create_transaction(nonce, gasprice, gaslimit, to_address, value, data, private_key):
     gaslimit = int(gaslimit)
     gasprice = int(gasprice)

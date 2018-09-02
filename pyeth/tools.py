@@ -1,6 +1,13 @@
 import math
-from rlp.utils import ALL_BYTES
+
 from .encode import *
+import struct
+
+
+ALL_BYTES = tuple(
+    struct.pack('B', i)
+    for i in range(256)
+)
 
 def hex_to_bytes(hex_type):
     byte_type=decode_hex(hex_type[2:])
