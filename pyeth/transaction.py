@@ -3,8 +3,8 @@ import rlp
 import sha3
 from py_ecc.secp256k1 import ecdsa_raw_sign
 
-from pyeth.encode import *
-from pyeth.tools import *
+from .encode import *
+from .tools import *
 
 
 def ecsign(rawhash, key):

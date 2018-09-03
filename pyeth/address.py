@@ -1,4 +1,4 @@
-from pyeth.key import *
+from .key import *
 import sha3
 from py_ecc.secp256k1 import privtopub
 
