@@ -1,6 +1,4 @@
 import math
-
-from .encode import *
 import struct
 
 
@@ -9,13 +7,7 @@ ALL_BYTES = tuple(
     for i in range(256)
 )
 
-def hex_to_bytes(hex_type):
-    byte_type=decode_hex(hex_type[2:])
-    return byte_type
 
-def bytes_to_hex(byte_type):
-    hex_type="0x%s" % encode_hex(byte_type)
-    return hex_type
 
 def is_numeric(x):
     return isinstance(x, int)
