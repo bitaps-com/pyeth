@@ -1,9 +1,8 @@
 import os
 import sys
 import time
-from .hash import *
 import random
-from secp256k1 import ffi
+
 
 parentPath = os.path.abspath("../..")
 if parentPath not in sys.path:

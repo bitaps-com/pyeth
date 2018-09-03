@@ -1,4 +1,3 @@
-from .tools import *
 from .bip39_mnemonic import generate_entropy
 from .encode import *
 
