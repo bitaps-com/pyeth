@@ -7,7 +7,8 @@ def create_private_key():
     """
         Create private key
     """
-    generate_entropy()
+    key=generate_entropy()
+    return key
 
 
 
