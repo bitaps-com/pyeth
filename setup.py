@@ -13,7 +13,7 @@ setup(name='pyeth',
       author_email='nadyka@bitaps.com',
       license='GPL-3.0',
       packages=find_packages(),
-      install_requires=[ 'secp256k1','coincurve','rlp','sha3'],
+      install_requires=['py_ecc','coincurve','rlp==0.6.0','sha3'],
       include_package_data=True,
       package_data={
           'pyeth': ['bip39_word_list/*.txt'],
