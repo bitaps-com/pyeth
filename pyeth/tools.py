@@ -143,5 +143,5 @@ def c_int_len(n, base_bytes=1):
     min_bits = base_bytes * 8 - 1
     if l <= min_bits + 1:
         return 1
-    payload_bytes = math.ceil((l)/8) - base_bytes
+    payload_bytes = math.ceil((l)/8)# - base_bytes
     return int(math.ceil((l+payload_bytes)/8))
