@@ -92,7 +92,15 @@ def int_to_c_int(n, base_bytes=1):
     if l <= min_bits + 1:
         return n.to_bytes(base_bytes, byteorder="big")
     prefix = 0
-    payload_bytes = math.ceil((l)/8)# - base_bytes
+    payload_bytes = math.ceil((l)/8) - base_bytes
+    a = payload_bytes
+    while True:
+        add_bytes = math.floor((a) / 8)
+        a = add_bytes
+        if add_bytes >= 1:
+            add_bytes += math.floor((payload_bytes + add_bytes) / 8) - math.floor((payload_bytes) / 8)
+            payload_bytes += add_bytes
+        if a == 0: break
     extra_bytes = int(math.ceil((l+payload_bytes)/8) - base_bytes)
     for i in range(extra_bytes):
         prefix += 2 ** i
@@ -143,5 +151,13 @@ def c_int_len(n, base_bytes=1):
     min_bits = base_bytes * 8 - 1
     if l <= min_bits + 1:
         return 1
-    payload_bytes = math.ceil((l)/8)# - base_bytes
+    payload_bytes = math.ceil((l)/8) - base_bytes
+    a = payload_bytes
+    while True:
+        add_bytes = math.floor((a) / 8)
+        a = add_bytes
+        if add_bytes >= 1:
+            add_bytes += math.floor((payload_bytes + add_bytes) / 8) - math.floor((payload_bytes) / 8)
+            payload_bytes += add_bytes
+        if a == 0: break
     return int(math.ceil((l+payload_bytes)/8))
