@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 
 setup(name='pyeth',
-      version='1.0',
+      version='1.1',
       description='Python Ethereum library',
       keywords='ethereum',
       url='https://github.com/bitaps-com/pyeth',
