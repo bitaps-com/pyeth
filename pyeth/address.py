@@ -11,6 +11,10 @@ def private_key_to_address(privkey):
     x, y = privtopub(k)
     return sha3.keccak_256(encode_int32(x) + encode_int32(y)).digest()[12:]
 
+def to_raw_address(raw_addr) -> bytes:
+    addr = normalize_address(raw_addr)
+    return hex_to_bytes(addr)
+
 def normalize_address(x, allow_blank=False):
     if is_numeric(x):
         return int_to_addr(x)
