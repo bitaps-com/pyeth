@@ -64,12 +64,10 @@ def encode_hex(byte_type):
     return hex_type
 
 def hex_to_bytes(hex_type):
-    byte_type=decode_hex(hex_type[2:])
-    return byte_type
+    return decode_hex(hex_type[2:]) if hex_type.startswith("0x") else decode_hex(hex_type)
 
 def bytes_to_hex(byte_type):
-    hex_type="0x%s" % encode_hex(byte_type)
-    return hex_type
+    return "0x%s" % encode_hex(byte_type)
 
 def encode_int32(v):
     return zpad(int_to_bytes(v), 32)
